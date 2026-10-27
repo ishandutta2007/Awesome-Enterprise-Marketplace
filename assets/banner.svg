@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c16"/>
+      <stop offset="50%" stop-color="#0d1527"/>
+      <stop offset="100%" stop-color="#140d2b"/>
+    </linearGradient>
+
+    <!-- Neon Glow Accents -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <!-- Radial Glows -->
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#38bdf8" stroke-width="0.75" stroke-opacity="0.12"/>
+      <circle cx="40" cy="40" r="1" fill="#818cf8" fill-opacity="0.3"/>
+    </pattern>
+
+    <!-- CSS Keyframe Animations -->
+    <style>
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 0.65; transform: scale(1.12); }
+      }
+      @keyframes flowStroke {
+        0% { stroke-dashoffset: 200; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes floatSoft {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-7px); }
+      }
+      @keyframes floatAlt {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(6px); }
+      }
+      @keyframes spinSlow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes pulseRing {
+        0%, 100% { r: 52px; opacity: 0.5; }
+        50% { r: 58px; opacity: 0.85; }
+      }
+
+      .animated-glow-cyan {
+        animation: pulseGlow 6s ease-in-out infinite alternate;
+        transform-origin: 250px 180px;
+      }
+      .animated-glow-purple {
+        animation: pulseGlow 7s ease-in-out infinite alternate-reverse;
+        transform-origin: 950px 220px;
+      }
+      .animated-flow-1 {
+        stroke-dasharray: 12 8;
+        animation: flowStroke 12s linear infinite;
+      }
+      .animated-flow-2 {
+        stroke-dasharray: 8 6;
+        animation: flowStroke 9s linear infinite reverse;
+      }
+      .floating-item-1 {
+        animation: floatSoft 5s ease-in-out infinite;
+      }
+      .floating-item-2 {
+        animation: floatAlt 6s ease-in-out infinite;
+      }
+      .rotating-badge {
+        animation: spinSlow 30s linear infinite;
+        transform-origin: 600px 95px;
+      }
+    </style>
+  </defs>
+
+  <!-- Base Dark Canvas -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGradient)"/>
+  <rect width="1200" height="420" rx="16" fill="url(#grid)"/>
+
+  <!-- Border Outline with subtle glow -->
+  <rect x="1.5" y="1.5" width="1197" height="417" rx="15" fill="none" stroke="url(#primaryGrad)" stroke-width="1.5" stroke-opacity="0.35"/>
+
+  <!-- Background Dynamic Glowing Orbs (Deep behind content) -->
+  <g id="dynamic-ambient-glows">
+    <circle class="animated-glow-cyan" cx="250" cy="180" r="220" fill="url(#glowCyan)"/>
+    <circle class="animated-glow-purple" cx="950" cy="220" r="240" fill="url(#glowPurple)"/>
+    <circle cx="600" cy="190" r="200" fill="url(#glowBlue)" opacity="0.3"/>
+  </g>
+
+  <!-- Dynamic Vector Flow Lines (Behind text) -->
+  <g id="dynamic-network-lines" opacity="0.45">
+    <path class="animated-flow-1" d="M -50,120 Q 250,50 600,110 T 1250,90" fill="none" stroke="#38bdf8" stroke-width="1.8"/>
+    <path class="animated-flow-2" d="M -50,310 Q 350,380 600,310 T 1250,330" fill="none" stroke="#c084fc" stroke-width="1.8"/>
+    <path class="animated-flow-1" d="M 120,-30 Q 300,200 400,450" fill="none" stroke="#818cf8" stroke-width="1.2" stroke-opacity="0.4"/>
+    <path class="animated-flow-2" d="M 1080,-30 Q 900,200 800,450" fill="none" stroke="#06b6d4" stroke-width="1.2" stroke-opacity="0.4"/>
+  </g>
+
+  <!-- Subtle Floating Tech Architecture Badges (Left & Right Sides) -->
+  <g id="side-pills" opacity="0.75">
+    <!-- Left Pill: B2B Commerce -->
+    <g class="floating-item-1" transform="translate(60, 160)">
+      <rect width="165" height="34" rx="17" fill="#0f172a" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4"/>
+      <circle cx="18" cy="17" r="4.5" fill="#38bdf8"/>
+      <text x="32" y="22" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" letter-spacing="0.5">B2B COMMERCE</text>
+    </g>
+
+    <!-- Left Lower Pill: Multi-Vendor -->
+    <g class="floating-item-2" transform="translate(85, 230)">
+      <rect width="160" height="34" rx="17" fill="#0f172a" stroke="#818cf8" stroke-width="1" stroke-opacity="0.4"/>
+      <circle cx="18" cy="17" r="4.5" fill="#818cf8"/>
+      <text x="32" y="22" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" letter-spacing="0.5">MULTI-VENDOR</text>
+    </g>
+
+    <!-- Right Pill: App Stores -->
+    <g class="floating-item-2" transform="translate(975, 160)">
+      <rect width="165" height="34" rx="17" fill="#0f172a" stroke="#c084fc" stroke-width="1" stroke-opacity="0.4"/>
+      <circle cx="18" cy="17" r="4.5" fill="#c084fc"/>
+      <text x="32" y="22" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" letter-spacing="0.5">APP STORE HUB</text>
+    </g>
+
+    <!-- Right Lower Pill: Composable -->
+    <g class="floating-item-1" transform="translate(950, 230)">
+      <rect width="165" height="34" rx="17" fill="#0f172a" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4"/>
+      <circle cx="18" cy="17" r="4.5" fill="#38bdf8"/>
+      <text x="32" y="22" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" letter-spacing="0.5">SOVEREIGN APIs</text>
+    </g>
+  </g>
+
+  <!-- FOREGROUND CONTENT: Guaranteed Highest Z-Index, Crisp & Clean -->
+  <g id="foreground-centerpiece">
+    <!-- Top Central Icon -->
+    <g transform="translate(600, 95)">
+      <!-- Outer Pulsing Ring -->
+      <circle cx="0" cy="0" r="38" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.3"/>
+      <circle cx="0" cy="0" r="46" fill="none" stroke="#818cf8" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 4" class="rotating-badge"/>
+
+      <!-- Icon Disc -->
+      <circle cx="0" cy="0" r="30" fill="url(#bgGradient)" stroke="url(#primaryGrad)" stroke-width="2"/>
+
+      <!-- Marketplace Storefront / Hub Glyph -->
+      <path d="M -13,-4 L 13,-4 L 16,14 L -16,14 Z" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M -6,-4 C -6,-11 6,-11 6,-4" fill="none" stroke="#c084fc" stroke-width="2" stroke-linecap="round"/>
+      <line x1="-1" y1="3" x2="-1" y2="7" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+      <line x1="5" y1="3" x2="5" y2="7" stroke="#818cf8" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="0" cy="10" r="1.5" fill="#c084fc"/>
+    </g>
+
+    <!-- Main Title -->
+    <text x="600" y="195" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="-0.5">
+      AWESOME <tspan fill="url(#primaryGrad)">ENTERPRISE MARKETPLACE</tspan>
+    </text>
+
+    <!-- Subtitle / Tagline -->
+    <text x="600" y="235" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="500" fill="#cbd5e1" letter-spacing="0.3">
+      Curated SaaS Ecosystems • Multi-Vendor Infrastructure • Sovereign App Stores
+    </text>
+
+    <!-- Description Mini Note -->
+    <text x="600" y="268" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="400" fill="#64748b" letter-spacing="0.8">
+      PRODUCTION-READY PLATFORMS &amp; OPEN-SOURCE CODEBASES FOR ENTERPRISE COMMERCE
+    </text>
+
+    <!-- Bottom Feature Pills Bar -->
+    <g transform="translate(600, 325)">
+      <!-- Pill 1: Multi-Vendor Platforms -->
+      <g transform="translate(-320, 0)">
+        <rect x="-10" y="-14" width="190" height="28" rx="14" fill="#1e293b" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4"/>
+        <text x="85" y="4" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="600" fill="#38bdf8">🛍️ Multi-Vendor Commerce</text>
+      </g>
+
+      <!-- Pill 2: Enterprise App Stores -->
+      <g transform="translate(-110, 0)">
+        <rect x="-10" y="-14" width="200" height="28" rx="14" fill="#1e293b" fill-opacity="0.85" stroke="#818cf8" stroke-width="1" stroke-opacity="0.4"/>
+        <text x="90" y="4" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="600" fill="#a5b4fc">🏢 Enterprise App Stores</text>
+      </g>
+
+      <!-- Pill 3: Self-Hosted & Sovereign -->
+      <g transform="translate(110, 0)">
+        <rect x="-10" y="-14" width="200" height="28" rx="14" fill="#1e293b" fill-opacity="0.85" stroke="#c084fc" stroke-width="1" stroke-opacity="0.4"/>
+        <text x="90" y="4" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11.5" font-weight="600" fill="#d8b4fe">🔓 Sovereign Open-Source</text>
+      </g>
+    </g>
+
+    <!-- Bottom Tiny Version Badge -->
+    <text x="600" y="385" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="500" fill="#475569" letter-spacing="1">
+      ★ COMMUNITY MAINTAINED &amp; REGULARLY UPDATED ★
+    </text>
+  </g>
+</svg>
