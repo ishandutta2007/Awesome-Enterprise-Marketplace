@@ -70,7 +70,7 @@ The following SaaS platforms provide hosted infrastructure for operating partner
 
 Open-source engines and headless commerce frameworks provide organizations with total architectural sovereignty, eliminating per-transaction vendor fees, data lock-in, and proprietary constraints.
 
-Repositories are listed in **descending order by GitHub star count**. Each project includes a real-time star badge linking directly to its stargazers page.
+Repositories are listed in **descending order by GitHub Stars_Count**. Each project includes a real-time Stars_Badge linking directly to its stargazers page.
 
 ---
 
@@ -332,7 +332,7 @@ Contributions from engineers, platform architects, and marketplace operators are
 3. **Add or refine an entry** in [README.md](file:///C:/Users/hp/Documents/Projects/Awesome-Enterprise-Marketplace/README.md) adhering to our criteria:
    - Must be actively maintained with production utility.
    - For SaaS tools: Include verified starting tier pricing and specific free tier limits.
-   - For open-source tools: Ensure the repo is public, verify the license, and format the star badge correctly.
+   - For open-source tools: Ensure the repo is public, verify the license, and format the Stars_Badge correctly.
 4. **Commit your modifications:**
    ```bash
    git commit -m "feat: add NewPlatform to enterprise marketplace list"
